@@ -1,3 +1,3 @@
 class ObjectSnapshot < ApplicationRecord
-  serialize :object_changes, JSON
+  serialize :object_changes, Hash
 end

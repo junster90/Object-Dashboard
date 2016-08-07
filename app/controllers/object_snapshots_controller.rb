@@ -6,7 +6,7 @@ class ObjectSnapshotsController < ApplicationController
   end
 
   def create
-    if ObjectSnapshotCsvProcessor.new(csv).import
+    if ObjectSnapshotCsvImporter.new(csv).import
       redirect_to root_path
     else
       redirect_to new_object_snapshot_path

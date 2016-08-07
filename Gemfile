@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'activerecord-import'
 
+gem 'smarter_csv'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
