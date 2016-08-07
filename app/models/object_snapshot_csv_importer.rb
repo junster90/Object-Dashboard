@@ -15,7 +15,7 @@ class ObjectSnapshotCsvImporter
   private
 
   def check_headers
-    provided_headers = CSV.open(@file) { |head| head.readline.reject(&:nil?) }
+    provided_headers = CSV.open(@file){ |first| first.readline.reject(&:nil?) }
 
     if provided_headers.sort == REQUIRED_HEADERS.sort
       provided_headers
