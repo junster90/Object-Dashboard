@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160806124451) do
     t.integer  "object_id"
     t.string   "object_type"
     t.text     "object_changes"
-    t.datetime "timestamp"
+    t.bigint   "timestamp"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

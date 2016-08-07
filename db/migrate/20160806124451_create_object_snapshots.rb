@@ -4,9 +4,9 @@ class CreateObjectSnapshots < ActiveRecord::Migration[5.0]
       t.integer :object_id
       t.string :object_type
       t.text :object_changes
-      t.datetime :timestamp
+      t.integer :timestamp, :limit => 8
 
-      t.timestamps, null: false
+      t.timestamps null: false
     end
   end
 end
