@@ -7,13 +7,18 @@ class ObjectSnapshotsController < ApplicationController
   end
 
   def create
-    if ObjectSnapshotCsvImporter.import(csv)
-      flash[:success] = "Successfully imported from CSV!"
-      redirect_to root_path
-    else
-      flash[:alert] = "Invalid CSV format! Please check for any errors and try again."
+    importer = ObjectSnapshotCsvImporter.new(csv)
+
+    importer.import
+    flash[:success] = "Successfully imported from CSV!"
+    redirect_to root_path
+
+    rescue ArgumentError
+      flash[:alert] = "There was a problem with your CSV file."
       redirect_to new_object_snapshot_path
-    end
+    rescue => e
+      flash[:alert] = e.message
+      redirect_to new_object_snapshot_path
   end
 
   private

@@ -1,6 +1,6 @@
 Upload new batch
 
 <%= form_for :object_batch, url: {action: "create"} do |f| %>
-  <%= f.file_field :file %>
+  <%= f.file_field :file, accept: 'text/csv' %>
   <%= f.submit 'Upload!' %>
 <% end %>
