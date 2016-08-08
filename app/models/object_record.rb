@@ -5,6 +5,6 @@ class ObjectRecord < ApplicationRecord
   validates :timestamp, uniqueness: { scope: [ :object_id, :object_type ] }
 
   def self.search(object_id, object_type, timestamp = Time.now.to_i)
-    self.where(object_id: object_id, object_type: object_type).where('timestamp <= ?', timestamp)
+    self.where(object_id: object_id, object_type: object_type).where('timestamp <= ?', timestamp).order(timestamp: :asc)
   end
 end
