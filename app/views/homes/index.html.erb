@@ -1,0 +1,14 @@
+Object Dashboard
+
+<%= link_to 'New upload', new_object_record_path %>
+
+<%= form_for :search, url: {controller: "object_snapshots", action: "create"} do |f| %>
+  <%= f.number_field :object_id, placeholder: "Object ID", required: true %>
+  <%= f.text_field :object_type, placeholder: "Object Type", required: true %>
+  <%= f.datetime_field :timestamp %>
+  <%= f.submit "Search!" %>
+<% end %>
+
+<% @objects.each do |object| %>
+  <p><%= object.object_id %> <%= object.object_type %> <%= object.timestamp %> <%= object.object_changes %></p>
+<% end %>

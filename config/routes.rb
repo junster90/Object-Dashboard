@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'object_records#index'
-  resources :object_records, only: [:index, :new, :create]
+  root 'homes#index'
+  resources :object_records, only: [:new, :create]
+  resource :object_snapshots, only: [:create]
 end

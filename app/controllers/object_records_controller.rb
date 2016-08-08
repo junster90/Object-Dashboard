@@ -1,8 +1,4 @@
 class ObjectRecordsController < ApplicationController
-  def index
-    @objects = ObjectRecord.all
-  end
-
   def new
   end
 
