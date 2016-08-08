@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'object_snapshots#index'
-  resources :object_snapshots, only: [:index, :new, :create]
+  root 'object_records#index'
+  resources :object_records, only: [:index, :new, :create]
 end

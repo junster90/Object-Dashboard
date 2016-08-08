@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160806124451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "object_snapshots", force: :cascade do |t|
+  create_table "object_records", force: :cascade do |t|
     t.integer  "object_id"
     t.string   "object_type"
     t.text     "object_changes"

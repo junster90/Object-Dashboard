@@ -1,4 +1,4 @@
-class ObjectSnapshotCsvImporter
+class ObjectRecordCsvImporter
   HEADERS_REQUIRED = true
   REQUIRED_HEADERS = ['object_id', 'object_type', 'timestamp', 'object_changes']
 
@@ -9,7 +9,7 @@ class ObjectSnapshotCsvImporter
   end
 
   def import
-    ObjectSnapshot.import(@objects, validate: true )
+    ObjectRecord.import(@objects, validate: true )
   end
 
   private
@@ -36,9 +36,9 @@ class ObjectSnapshotCsvImporter
     check_duplicate(rows)
 
     objects = []
-    rows.each do |object|
-      instance = ObjectSnapshot.new(object)
 
+    rows.each do |object|
+      instance = ObjectRecord.new(object)
       objects << instance if instance.valid? or raise Exceptions::InvalidCsvRecordError
     end
 
@@ -46,6 +46,6 @@ class ObjectSnapshotCsvImporter
   end
 
   def check_duplicate(rows)
-    rows.uniq.length != rows.length or raise Exceptions::DuplicateRecordsError
+    rows.uniq.length == rows.length or raise Exceptions::DuplicateRecordsError
   end
 end

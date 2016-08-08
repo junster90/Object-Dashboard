@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe ObjectSnapshot do
+describe ObjectRecord do
 end

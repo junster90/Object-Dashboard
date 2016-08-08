@@ -1,13 +1,13 @@
-class ObjectSnapshotsController < ApplicationController
+class ObjectRecordsController < ApplicationController
   def index
-    @objects = ObjectSnapshot.all
+    @objects = ObjectRecord.all
   end
 
   def new
   end
 
   def create
-    importer = ObjectSnapshotCsvImporter.new(csv)
+    importer = ObjectRecordCsvImporter.new(csv)
 
     importer.import
     flash[:success] = "Successfully imported from CSV!"
@@ -15,10 +15,10 @@ class ObjectSnapshotsController < ApplicationController
 
     rescue ArgumentError
       flash[:alert] = "There was a problem with your CSV file."
-      redirect_to new_object_snapshot_path
+      redirect_to new_object_record_path
     rescue => e
       flash[:alert] = e.message
-      redirect_to new_object_snapshot_path
+      redirect_to new_object_record_path
   end
 
   private
