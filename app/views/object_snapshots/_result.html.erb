@@ -1,0 +1,4 @@
+<p><%= @result.object_id %> <%= @result.object_type %></p>
+<% @result.properties.each do | key, value | %>
+  <p><%= key %>: <%= value %></p>
+<% end %>

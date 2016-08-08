@@ -1,6 +1,10 @@
 class ObjectSnapshotsController < ApplicationController
   def create
     @result = ObjectSnapshotsBuilder.new(search_query_params).build
+
+    respond_to do |format|
+      @result ? format.js : format.js { render 'error' }
+    end
   end
 
   private

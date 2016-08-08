@@ -9,15 +9,17 @@
   </head>
 
   <body>
-    <% if flash[:success] %>
-      <div class="success">
+    <div class="success">
+      <% if flash[:success] %>
         <p><%= flash[:success] %></p>
-      </div>
-    <% elsif flash[:alert] %>
-      <div class="alert">
+      <% end %>
+    </div>
+
+    <div class="alert">
+      <% if flash[:alert] %>
         <p><%= flash[:alert] %></p>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
 
     <%= yield %>
   </body>
