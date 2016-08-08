@@ -6,18 +6,18 @@ class ObjectSnapshotsBuilder
   end
 
   def build
-    records = ObjectRecord.search(@object_id, @object_type, @timestamp)
+    records = ObjectRecord.search(@object_id, @object_type, @timestamp.to_i)
 
     return nil if records.blank?
 
     properties = unify_properties(records)
-    ObjectSnapshot.new(@object_id, @object_type, properties)
+    ObjectSnapshot.new(@object_id, @object_type, @timestamp, properties)
   end
 
   private
 
   def timestamp_queried_or_now(timestamp)
-    timestamp.blank? ? Time.now.to_i : Time.parse(timestamp.to_i)
+    timestamp.blank? ? Time.now : Time.parse(timestamp)
   end
 
   def unify_properties(records)

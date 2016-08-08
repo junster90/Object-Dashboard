@@ -1,4 +1,10 @@
-<p><%= @result.object_id %> <%= @result.object_type %></p>
-<% @result.properties.each do | key, value | %>
-  <p><%= key %>: <%= value %></p>
-<% end %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">TYPE: <%= @result.object_type %> | ID: <%= @result.object_id %> | Status on: <%= @result.timestamp %></h3>
+  </div>
+  <div class="panel-body">
+    <% @result.properties.each do | key, value | %>
+      <p><%= key %>: <%= value %></p>
+    <% end %>
+  </div>
+</div>

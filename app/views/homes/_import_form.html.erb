@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>Import CSV</h4>
+  </div>
+  <div class="panel-body">
+    <p>You can create new object records by importing a CSV file!</p>
+    <%= form_for :object_batch, class: "form-horizontal", url: {controller: "object_records", action: "create"} do |f| %>
+      <div class="form-group">
+        <label class="control-label">File</label>
+        <div class="input-group">
+          <%= f.file_field :file, class: 'form-control', accept: 'text/csv', required: true %>
+          <span class="input-group-btn">
+            <%= f.submit 'Import', class: "btn btn-primary" %>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

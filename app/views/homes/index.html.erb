@@ -1,55 +1,15 @@
-<div>
+<div class="welcome">
   <h1>Welcome to your Dashboard!</h1>
 </div>
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4>Import CSV</h4>
-  </div>
-  <div class="panel-body">
-    <p>You can create new object records by importing a CSV file!</p>
-    <%= form_for :object_batch, class: "form-horizontal", url: {controller: "object_records", action: "create"} do |f| %>
-      <div class="form-group">
-        <label class="control-label">File</label>
-        <div class="input-group">
-          <%= f.file_field :file, class: 'form-control', accept: 'text/csv', required: true %>
-          <span class="input-group-btn">
-            <%= f.submit 'Import', class: "btn btn-primary" %>
-          </span>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render partial: 'import_form' %>
+
+<%= render partial: 'query_form' %>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4>Query Objects</h4>
+    <h4>Search Results</h4>
   </div>
-  <div class="panel-body">
-    <p>You can create new object records by importing a CSV file!</p>
-    <%= form_for :object_batch, class: "form-horizontal", url: {controller: "object_records", action: "create"} do |f| %>
-      <div class="form-group">
-        <label class="control-label">File</label>
-        <div class="input-group">
-          <%= f.file_field :file, class: 'form-control', accept: 'text/csv' %>
-          <span class="input-group-btn">
-            <%= f.submit 'Import', class: "btn btn-primary" %>
-          </span>
-        </div>
-      </div>
-    <% end %>
+  <div class="panel-body" id="results">
   </div>
-</div>
-
-
-<%= form_for :search, html: {id: 'search'}, url: {controller: "object_snapshots", action: "create"}, remote: true do |f| %>
-  <%= f.number_field :object_id, placeholder: "Object ID", required: true %>
-  <%= f.text_field :object_type, placeholder: "Object Type", required: true %>
-  <%= f.datetime_field :timestamp %>
-  <%= f.submit "Search!" %>
-<% end %>
-
-<div id="results">
-
 </div>
