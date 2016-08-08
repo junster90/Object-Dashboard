@@ -9,18 +9,28 @@
   </head>
 
   <body>
-    <div class="success">
-      <% if flash[:success] %>
-        <p><%= flash[:success] %></p>
-      <% end %>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Object Dashboard</a>
+        </div>
+      </div>
+    </nav>
 
-    <div class="alert">
-      <% if flash[:alert] %>
-        <p><%= flash[:alert] %></p>
-      <% end %>
-    </div>
+    <div class="container">
+      <div class="success">
+        <% if flash[:success] %>
+          <p><%= flash[:success] %></p>
+        <% end %>
+      </div>
+      <div class="alert">
+        <% if flash[:alert] %>
+          <p><%= flash[:alert] %></p>
+        <% end %>
+      </div>
 
-    <%= yield %>
+      <%= yield %>
+
+    </div>
   </body>
 </html>
