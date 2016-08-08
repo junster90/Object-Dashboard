@@ -1,10 +1,6 @@
 class ObjectSnapshotsController < ApplicationController
   def create
-    records = ObjectRecord.search(search_query_params)
-
-    @result = records.map(&:object_changes).reduce(&:merge).sort.to_h
-
-    redirect_to root_path
+    @result = ObjectSnapshotsBuilder.new(search_query_params).build
   end
 
   private
