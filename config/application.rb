@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module ObjectDashboard
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/lib/exceptions)
+    config.autoload_paths << "#{Rails.root}/lib/exceptions"
+    config.eager_load_paths << "#{Rails.root}/lib/exceptions"
   end
 end
