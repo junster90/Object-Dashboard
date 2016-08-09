@@ -1,24 +1,19 @@
-# README
+# Object Dashboard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Try it now at: http://object-dashboard.herokuapp.com
 
-Things you may want to cover:
+# Features
 
-* Ruby version
+• Allows users to upload CSV files containing object transaction records.
 
-* System dependencies
+Required headers: `object_id, object_type, timestamp, object_changes` in any order!
 
-* Configuration
+* Blanks, duplicates and existing saved records are not allowed.
 
-* Database creation
+• Allows users to query for snapshots of objects at a certain point in time.
 
-* Database initialization
+* If left blank, the search will return the current status of the object.
 
-* How to run the test suite
+• Flushing the DB is available for easy testing!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Enjoy!
