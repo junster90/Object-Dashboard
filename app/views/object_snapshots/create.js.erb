@@ -1,2 +1,2 @@
-$('.alert').html("");
+$('.alert').remove();
 $('#results').prepend("<%= j render(partial: 'result', object: @result).force_encoding('utf-8') %>");
