@@ -2,11 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.segment {
+  min-height: 210px;
+}
+
+.form-group {
+  padding-left: 0;
+  padding-right: 5px;
+}
+
+.flush-db {
+  a:hover {
+    background-color: $brand-danger !important;
+  }
+}
+
 .welcome {
   margin-bottom: 20px;
 }
 
 .search-submit {
-  text-align: right;
-  padding-top: 20px;
+  @media only screen and (min-width : 1200px) {
+    text-align: right;
+    padding-top: 20px;
+  }
+}
+
+.property {
+  margin: 5px 5px 5px 5px;
+  box-sizing: border-box;
 }

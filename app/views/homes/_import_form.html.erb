@@ -1,9 +1,9 @@
-<div class="panel panel-default">
+<div class="panel panel-default segment">
   <div class="panel-heading">
     <h4>Import CSV</h4>
   </div>
   <div class="panel-body">
-    <p>You can create new object records by importing a CSV file!</p>
+    <p>Import object records with a CSV file!</p>
     <%= form_for :object_batch, class: "form-horizontal", url: {controller: "object_records", action: "create"} do |f| %>
       <div class="form-group">
         <label class="control-label">File</label>

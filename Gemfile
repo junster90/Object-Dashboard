@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 gem 'activerecord-import'
@@ -36,8 +35,11 @@ gem 'smarter_csv'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'pry-rails'
+  gem 'rspec'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'pry'
 end
 
 group :development do

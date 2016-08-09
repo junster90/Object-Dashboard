@@ -4,7 +4,9 @@
   </div>
   <div class="panel-body">
     <% @result.properties.each do | key, value | %>
-      <p><%= key %>: <%= value %></p>
+      <div class="well well-sm col-sm-3 property">
+        <%= key %>: <%= value %>
+      </div>
     <% end %>
   </div>
 </div>

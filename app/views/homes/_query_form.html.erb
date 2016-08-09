@@ -1,34 +1,33 @@
-<div class="panel panel-default">
+<div class="panel panel-default segment">
   <div class="panel-heading">
     <h4>Query Objects</h4>
   </div>
   <div class="panel-body">
-    <p>Find objects at a specific point in time!</p>
+    <p>Find snapshots of objects at a specific point in time!</p>
     <div>
       <%= form_for :search, html: {class:'form-inline', id: 'search'}, url: {controller: "object_snapshots", action: "create"}, remote: true do |f| %>
-
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <label class="control-label">Object ID</label>
             <div class="input-group">
               <%= f.number_field :object_id, min: 0, step: 1, placeholder: "Object ID", class: 'form-control', required: true %>
             </div>
           </div>
 
-          <div class="form-group col-md-3">
+          <div class="form-group col-lg-3">
             <label class="control-label">Object Type</label>
             <div class="input-group">
               <%= f.text_field :object_type, placeholder: "Object Type", class: 'form-control', required: true %>
             </div>
           </div>
 
-          <div class="form-group col-md-3">
-            <label class="control-label">Date & Time</label>
+          <div class="form-group col-lg-4">
+            <label class="control-label">Date & Time (Optional)</label>
             <div class="input-group">
               <%= f.datetime_field :timestamp, class: 'form-control', title: 'Date' %>
             </div>
           </div>
 
-          <div class="form-group col-md-3 search-submit">
+          <div class="form-group col-lg-2 search-submit">
             <div class="input-group">
               <%= f.submit "Search", class: 'btn btn-primary' %>
             </div>

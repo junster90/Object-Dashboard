@@ -14,6 +14,10 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Object Dashboard</a>
         </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="flush-db"><%= link_to 'Flush DB', object_records_path, method: :delete %></li>
+        </ul>
       </div>
     </nav>
 

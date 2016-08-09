@@ -13,6 +13,12 @@ class ObjectRecordsController < ApplicationController
       redirect_to root_path
   end
 
+  def destroy
+    ObjectRecord.destroy_all
+    flash[:alert] = { type: "success", message: "Successfully flushed DB!" }
+    redirect_to root_path
+  end
+
   private
 
   def csv

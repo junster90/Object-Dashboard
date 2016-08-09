@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  resources :object_records, only: [:create]
+  resource :object_records, only: [:create, :destroy]
   resources :object_snapshots, only: [:create]
 end
