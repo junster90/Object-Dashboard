@@ -35,11 +35,17 @@ gem 'smarter_csv'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'pry'
+end
+
+group :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
-  gem 'pry'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
 end
 
 group :development do

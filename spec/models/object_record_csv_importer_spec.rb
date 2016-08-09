@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 describe ObjectRecordCsvImporter do
-  TEST_FILES_PATH = "#{Rails.root}/spec/support/csv_files"
-
   let(:klass) { ObjectRecordCsvImporter }
 
   describe '.initialize' do
