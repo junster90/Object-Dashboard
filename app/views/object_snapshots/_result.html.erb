@@ -1,9 +1,9 @@
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">TYPE: <%= @result.object_type %> | ID: <%= @result.object_id %> | Status on: <%= @result.timestamp %></h3>
+    <h3 class="panel-title">TYPE: <%= result.object_type %> | ID: <%= result.object_id %> | Status on: <%= result.timestamp %></h3>
   </div>
   <div class="panel-body">
-    <% @result.properties.each do | key, value | %>
+    <% result.properties.each do | key, value | %>
       <div class="well well-sm col-sm-3 property">
         <%= key %>: <%= value %>
       </div>
